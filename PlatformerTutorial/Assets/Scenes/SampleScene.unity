@@ -464,6 +464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246f444a44830934fb1d5f09e0f49432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   movement: {x: 0, y: 0}
+  jumpSpeed: 2.37
   rb: {fileID: 737303867}
+  isGrounded: 0
