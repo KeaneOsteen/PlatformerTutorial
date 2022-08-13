@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
+        //left == -1, right == 1;
 
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+        //rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+        rb.AddForce(movement * speed + rb.position * Time.deltaTime);
     }
 }
