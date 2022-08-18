@@ -11,11 +11,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public bool isGrounded = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    // vector 2
+    // x y
 
     // Update is called once per frame
     void Update()
