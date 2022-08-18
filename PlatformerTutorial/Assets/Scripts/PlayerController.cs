@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGrounded = true;
+
     }
 
     // Update is called once per frame
@@ -24,15 +24,13 @@ public class PlayerController : MonoBehaviour
         //left == -1, right == 1;
 
         //rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
-        //rb.AddForce(movement * speed + rb.position * Time.deltaTime, ForceMode2D.Force);
+        rb.velocity = new Vector2(movement.x * speed, rb.velocity.y) + rb.position * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + jumpSpeed) + rb.position * Time.deltaTime;
             isGrounded = false;
         }
-
-        rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
     }
 
     public void OnCollisionEnter2D(Collision2D col)
